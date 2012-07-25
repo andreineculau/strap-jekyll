@@ -1,0 +1,25 @@
+{% assign post = page %}
+
+{% assign text = site.text %}
+
+{% assign author = site.authors[site.author] %}
+
+{% if site.pages_url %}
+  {% assign site_pages_url = site.pages_url %}
+{% else %}
+  {% capture site_pages_url %}http://{{ site.author }}.github.com/{{ site.repo }}{% endcapture %}
+{% endif %}
+
+{% if site.repo_url %}
+  {% assign site_repo_url = site.repo_url %}
+{% else %}
+  {% capture site_repo_url %}http://github.com/{{ site.author }}/{{ site.repo }}{% endcapture %}
+{% endif %}
+
+{% if page.sidebar %}
+  {% assign page_sidebar = site.sidebars[page.sidebar] %}
+{% else %}{% if page.sidebar_by_name %}
+  {% assign page_sidebar = site.sidebars_by_name[page.sidebar_by_name] %}
+{% else %}{% if site.sidebar %}
+  {% assign page_sidebar = site.sidebars[site.sidebar] %}
+{% endif %}{% endif %}{% endif %}

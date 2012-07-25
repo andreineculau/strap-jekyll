@@ -1,0 +1,43 @@
+{
+    "name": "strap-jekyll",
+    "preferGlobal": false,
+    "private": true,
+    "version": "0.0.1",
+    "author": "Andrei Neculau <andrei.neculau@gmail.com>",
+    "description": "Simple Twitter Bootstrap for Jekyll",
+    "contributors": [
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/andreineculau/strap-jekyll.git"
+    },
+    "keywords": [
+        "twitter",
+        "bootstrap",
+        "js",
+        "javascript",
+        "css",
+        "less",
+        "jekyll",
+        "markdown",
+        "layout",
+        "theme"
+    ],
+    "license": "MIT",
+
+    "engines": {
+        "node": "~0.8.2"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "bootstrap": "git://github.com/twitter/bootstrap.git#857b8fb8be81178d14f59c126c1381b09aff7c0f"
+    },
+    "bundleDependencies": [
+    ],
+
+    "scripts": {
+    },
+    "bin": {
+    }
+}

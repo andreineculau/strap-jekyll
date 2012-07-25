@@ -1,0 +1,157 @@
+#github.com
+safe: true
+lsi: false
+pygments: true
+source: "."
+destination: ./_site
+#plugins: ./_plugins
+
+#others
+auto: true
+server: true
+server_port: 4000
+baseurl: &base_url /strap_jekyll
+base_url: *base_url
+#url: http://localhost:4000
+
+future: false
+markdown: kramdown
+permalink: date
+#paginate:
+#exclude:
+#include:
+#limit_posts:
+
+maruku:
+  use_tex: false
+  use_divs: false
+  png_engine: blahtex
+  png_dir: images/latex
+  png_url: /images/latex
+
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions:
+    - no_intra_emphasis
+    - tables
+    - fenced_code_blocks
+    - autolink
+    - strikethrough
+    - lax_html_blocks
+    - space_after_headers
+    - superscript
+    #- no_intraemphasis
+    #- fenced_code
+    #- gh_blockcode
+  render_options:
+    - filter_html
+    - no_images
+    - no_links
+    - no_styles
+    - safe_links_only
+    - with_toc_data
+    - hard_wrap
+    - xhtml
+
+kramdown:
+  auto_id_prefix: ""
+  auto_ids: true
+  entity_output: as_char
+  footnote_nr: 1
+  html_to_native: false
+  latex_headers: ["section", "subsection", "subsubsection", "paragraph", "subparagraph", "subparagraph"]
+  line_width: 72
+  parse_block_html: false
+  parse_span_html: false
+  remove_block_html_tags: true
+  remove_span_html_tags: true
+  smart_quotes: ["lsquo", "rsquo", "ldquo", "rdquo"]
+  template: ""
+  toc_levels: 1..6
+  use_coderay: false
+
+  coderay:
+    coderay_wrap: div
+    coderay_line_numbers: inline
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: style
+
+#theme
+name: Strap Jekyll
+description: Simple Twitter Bootstrap for Jekyll
+pages_url: null
+repo_url: null
+repo: strap-jekyll
+author: &github_author andreineculau
+authors:
+  andreineculau:
+    display_name: Andrei Neculau
+    gravatar: a990f5b18007f1a360ebd163626fe3f4
+    email:
+    url: "http://andreineculau.com"
+    twitter: andreineculau
+    github: *github_author
+#theme.tools
+annotator: null
+github_watch_btn: false
+github_fork_btn: false
+github_follow_btn: false
+#theme.sidebar
+sidebar: null
+sidebars:
+  -
+    title: 2003
+    url: /2003.html
+    headers:
+      -
+        title: "Titlul I: Principii generale"
+        url: /2003/titlul_1.html
+      - title: "Titlul II: Drepturile, libertățile și îndatoririle fundamentale"
+        items:
+          -
+            title: "Capitolul I: Dispoziții comune"
+            url: /2003/titlul_2.capitolul_1.html
+          -
+            title: "Capitolul II: Drepturile și libertățile fundamentale"
+            url: /2003/titlul_2.capitolul_2.html
+          -
+            title: "Capitolul III: Îndatoririle fundamentale"
+            url: /2003/titlul_2.capitolul_3.html
+          -
+            title: "Capitolul IV: Avocatul Poporului"
+            url: /2003/titlul_2.capitolul_4.html
+  -
+    title: develop
+    url: /develop.html
+    headers:
+      -
+        title: "Titlul I: Principii generale"
+        url: /develop/titlul_1.html
+      - title: "Titlul II: Drepturile, libertățile și îndatoririle fundamentale"
+        items:
+          -
+            title: "Capitolul I: Dispoziții comune"
+            url: /develop/titlul_2.capitolul_1.html
+          -
+            title: "Capitolul II: Drepturile și libertățile fundamentale"
+            url: /develop/titlul_2.capitolul_2.html
+          -
+            title: "Capitolul III: Îndatoririle fundamentale"
+            url: /develop/titlul_2.capitolul_3.html
+          -
+            title: "Capitolul IV: Avocatul Poporului"
+            url: /develop/titlul_2.capitolul_4.html
+#theme.text
+text:
+  index: index
+  downloadZipFile: Download ZIP File
+  downloadTarBall: Download TAR Ball
+  forkMeOnGitHub: Fork me on <strong>GitHub</strong>
+  maintainedBy: project maintained by
+  contact: contact
+  toc: Table of Contents
+  related: Related Pages

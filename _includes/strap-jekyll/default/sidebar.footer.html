@@ -1,0 +1,46 @@
+<footer id="footer">
+  <hr>
+  {% if text.maintainedBy %}
+    <div class="btn-group" id="author">
+      <button class="btn disabled">
+        {{ text.maintainedBy }}
+      </button>
+      <button class="btn{% if author.url == null %} disabled{% endif %}"{% if author.url %} data-href="{{ author.url }}{% endif %}">
+        {{ author.display_name }}
+      </button>
+    </div>
+    <br>
+  {% endif %}
+  {% if text.contact %}
+    <div class="btn-group" id="author-contact">
+      <button class="btn disabled">
+        {{ text.contact }}
+      </button>
+      {% if author.email %}
+        <button class="btn" data-href="mailto:{{ author.email }}">
+          {{ author.email }}
+        </button>
+      {% endif %}
+      {% if author.twitter %}
+        <button class="btn" data-href="http://twitter.com/{{ author.twitter }}">
+          <img src="{{ site.base_url }}/assets/strap-jekyll/img/icon-twitter.png"> on Twitter
+        </button>
+      {% endif %}
+      {% if author.github %}
+        <button class="btn" data-href="http://github.com/{{ author.github }}">
+          <img src="{{ site.base_url }}/assets/strap-jekyll/img/icon-github.png"> on GitHub
+        </button>
+      {% endif %}
+    </div>
+    <br>
+  {% endif %}
+  {% if site.github_watch_btn %}
+    <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user={{ site.author }}&amp;repo={{ site.repo }}&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+  {% endif %}
+  {% if site.github_fork_btn %}
+    <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user={{ site.author }}&amp;repo={{ site.repo }}&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="85px" height="20px"></iframe>
+  {% endif %}
+  {% if site.github_follow_btn %}
+    <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user={{ site.author }}&amp;repo={{ site.repo }}&amp;type=follow&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165px" height="20px"></iframe>
+  {% endif %}
+</footer>

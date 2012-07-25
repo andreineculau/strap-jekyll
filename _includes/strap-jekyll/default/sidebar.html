@@ -1,0 +1,26 @@
+{% if page_sidebar %}
+  <div class="well sidebar-nav" id="sidebar">
+    <ul class="nav nav-list" id="sidebar-toc">
+      <li class="nav-header">{{ text.toc }}</li>
+    </ul>
+    <ul class="nav nav-list">
+      <li class="divider"></li>
+      <li class="nav-header">{{ text.related }}</li>
+      <li class="{% if page_sidebar.url == page.url %} active{% endif %}"><a href="{{ site.base_url }}{{ page_sidebar.url }}">{{ page_sidebar.title }}</a></li>
+
+      {% for header in page_sidebar.headers %}
+        <li class="divider"></li>
+        {% if header.url %}
+          <li class="{% if header.url == page.url %} active{% endif %}"><a href="{{ site.base_url }}{{ header.url }}">{{ header.title }}</a></li>
+        {% else %}
+          <li class="nav-header">{{ header.title }}</li>
+        {% endif %}
+
+        {% for item in header.items %}
+          <li class="{% if item.url == page.url %} active{% endif %}"><a href="{{ site.base_url }}{{ item.url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  </div><!--/.well -->
+{% endif %}
+{% include strap-jekyll/default/sidebar.footer.html %}

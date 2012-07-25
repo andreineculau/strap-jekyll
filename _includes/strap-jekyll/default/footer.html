@@ -1,0 +1,45 @@
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/jquery.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-transition.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-alert.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-modal.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-dropdown.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-scrollspy.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-tab.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-tooltip.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-popover.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-button.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-collapse.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-carousel.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-typeahead.js"></script>
+
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/strap-jekyll-default.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll-default-custom.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/rainbow.js/rainbow.min.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/rainbow.js/rainbowApiary.js"></script>
+
+    {% if page.annotator %}
+      {% assign annotator = true %}
+    {% else %}{% if site.annotator %}
+      {% assign annotator = true %}
+    {% endif %}{% endif %}
+    {% if annotator %}
+      <script>
+      window._annotatorConfig = {
+        auth: {
+          tokenUrl: "http://annotateit.org/api/token"
+        },
+        store: {
+          prefix: "http://annotateit.org/api"
+        },
+        tags: !0
+      }
+      </script>
+      <script src="http://assets.annotateit.org/bookmarklet/bootstrap.js"></script>
+    {% endif %}
+
+  </body>
+</html>

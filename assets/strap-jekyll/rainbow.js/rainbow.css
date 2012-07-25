@@ -1,0 +1,67 @@
+pre.rainbow {
+  margin-bottom: 20px;
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+  padding: 6px 10px;
+  color: #333;
+  background-color: #f8f8f8;
+  font-family: Consolas, Menlo, 'Liberation Mono', Courier, monospace;
+  line-height: 1.2em;
+  overflow: auto;
+}
+pre.rainbow code {
+  display: block;
+  white-space: pre;
+}
+pre.rainbow code span.comment {
+  color: #998;
+}
+pre.rainbow code span.support {
+  color: #0086b3;
+}
+pre.rainbow code span.tag,
+pre.rainbow code span.tag-name {
+  color: #000080;
+}
+pre.rainbow code span.keyword,
+pre.rainbow code span.css-property,
+pre.rainbow code span.vendor-prefix,
+pre.rainbow code span.sass,
+pre.rainbow code span.class,
+pre.rainbow code span.id,
+pre.rainbow code span.css-value,
+pre.rainbow code span.entity.function,
+pre.rainbow code span.storage.function {
+  font-weight: bold;
+}
+pre.rainbow code span.css-property,
+pre.rainbow code span.css-value,
+pre.rainbow code span.vendor-prefix,
+pre.rainbow code span.support.namespace {
+  color: #333;
+}
+pre.rainbow code span.constant.numeric,
+pre.rainbow code span.keyword.unit,
+pre.rainbow code span.hex-color {
+  font-weight: normal;
+  color: #099;
+}
+pre.rainbow code span.entity.class {
+  color: #458;
+}
+pre.rainbow code span.entity.id,
+pre.rainbow code span.entity.function {
+  color: #900;
+}
+pre.rainbow code span.attribute,
+pre.rainbow code span.variable {
+  color: #008080;
+}
+pre.rainbow code span.string,
+pre.rainbow code span.support.value {
+  font-weight: normal;
+  color: #d14;
+}
+pre.rainbow code span.regexp {
+  color: #009926;
+}
