@@ -39,7 +39,8 @@
 
     // Make headers link-able
     $('#content h2[id],#content h3[id],#content h4[id],#content h5[id]').each(function() {
-        var $this = $(this);
+        var $this = $(this),
+            nbsp = Array(Number($this.get(0).tagName.substr(1)) - 1).join('&middot;&nbsp;');
 
         $this.on('click', function() {
             var $this = $(this);
@@ -47,7 +48,7 @@
             window.location.hash = $this.attr('id');
         })
 
-        $('#sidebar-toc').append($('<li><a href="#' + $this.attr('id') + '">' + $this.text() + '</li>')).css('display', 'block');
+        $('#sidebar-toc').append($('<li><a href="#' + $this.attr('id') + '">' + nbsp + $this.text() + '</li>')).css('display', 'block');
     });
 
     // CODE SYNTAX HIGHLIGHT

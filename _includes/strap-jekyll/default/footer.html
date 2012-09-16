@@ -17,9 +17,8 @@
     <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-typeahead.js"></script>
 
     <script src="{{ site.base_url }}/assets/strap-jekyll/js/strap-jekyll-default.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll-default-custom.js"></script>
     <script src="{{ site.base_url }}/assets/strap-jekyll/rainbow.js/rainbow.min.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/rainbow.js/rainbowApiary.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll-default-custom.js"></script>
 
     {% if page.annotator %}
       {% assign annotator = true %}
@@ -41,5 +40,6 @@
       <script src="http://assets.annotateit.org/bookmarklet/bootstrap.js"></script>
     {% endif %}
 
+    {% include strap-jekyll-default-footer-custom.html %}
   </body>
 </html>

@@ -5,7 +5,7 @@ Simple [Twitter Bootstrap][^1] for [Jekyll][^2] (or [GitHub Pages][^3] for poste
 ## Install
 
 ```bash
-curl https://raw.github.com/andreineculau/strap-jekyll/master/install.strap-jekyll.sh | sh -s -- --copy --force
+curl https://raw.github.com/andreineculau/strap-jekyll/master/_install-strap-jekyll.sh | sh -s -- --copy --force
 ```
 
 
