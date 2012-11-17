@@ -2,23 +2,26 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/jquery.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-transition.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-alert.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-modal.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-dropdown.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-scrollspy.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-tab.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-tooltip.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-popover.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-button.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-collapse.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-carousel.js"></script>
-    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap-typeahead.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/jquery.min.js"></script>
+    <script src="{{ site.base_url }}/assets/strap-jekyll/js/bootstrap.min.js"></script>
 
     <script src="{{ site.base_url }}/assets/strap-jekyll/js/strap-jekyll-default.js"></script>
     <script src="{{ site.base_url }}/assets/strap-jekyll/rainbow.js/rainbow.min.js"></script>
     <script src="{{ site.base_url }}/assets/strap-jekyll-default-custom.js"></script>
+
+    {% if page.commentIssueId %}
+      <script src="//cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+      <script src="{{ site.base_url }}/assets/strap-jekyll/js/strap-jekyll-comments-github.js"></script>
+      <script>
+        $.ajax('https://api.github.com/repos/{{ site.author }}/{{ site.repo }}/issues/{{ page.commentIssueId }}/comments', {
+          headers: {
+            accept: 'application/vnd.github.full+json'
+          },
+          dataType: 'json',
+          success: loadGithubComments
+        });
+      </script
+    {% endif %}
 
     {% if page.annotator %}
       {% assign annotator = true %}

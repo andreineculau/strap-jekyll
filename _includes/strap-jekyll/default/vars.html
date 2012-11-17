@@ -1,19 +1,10 @@
-{% assign post = page %}
-
 {% assign text = site.text %}
 
-{% assign author = site.authors[site.author] %}
 
-{% if site.pages_url %}
-  {% assign site_pages_url = site.pages_url %}
+{% if page.author %}
+  {% assign page_author = site.authors[page.author] %}
 {% else %}
-  {% capture site_pages_url %}http://{{ site.author }}.github.com/{{ site.repo }}{% endcapture %}
-{% endif %}
-
-{% if site.repo_url %}
-  {% assign site_repo_url = site.repo_url %}
-{% else %}
-  {% capture site_repo_url %}http://github.com/{{ site.author }}/{{ site.repo }}{% endcapture %}
+  {% assign page_author = site.authors[site.author] %}
 {% endif %}
 
 {% if page.sidebar %}
@@ -23,3 +14,23 @@
 {% else %}{% if site.sidebar %}
   {% assign page_sidebar = site.sidebars[site.sidebar] %}
 {% endif %}{% endif %}{% endif %}
+
+
+{% assign site_author = site.authors[site.author] %}
+
+{% if site.pages_url %}
+  {% assign site_pages_url = site.pages_url %}
+{% else %}
+  {% capture site_pages_url %}{{ site.author }}.github.com{% endcapture %}
+  {% if site_pages_url == site.repo %}
+    {% capture site_pages_url %}http://{{ site.repo }}{% endcapture %}
+  {% else %}
+    {% capture site_pages_url %}http://{{ site.author }}.github.com/{{ site.repo }}{% endcapture %}
+  {% endif %}
+{% endif %}
+
+{% if site.repo_url %}
+  {% assign site_repo_url = site.repo_url %}
+{% else %}
+  {% capture site_repo_url %}http://github.com/{{ site.author }}/{{ site.repo }}{% endcapture %}
+{% endif %}

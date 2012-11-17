@@ -3,12 +3,15 @@
 
   <div class="container">
     <div class="row">
-      <div class="span4">
-        {% include strap-jekyll/default/sidebar.html %}
+      <div class="span7" id="content">
+        {{ content }}
       </div><!--/span-->
 
-      <div class="span6" id="content">
-        {{ content }}
+      <div class="span1">
+      </div><!--/span-->
+
+      <div class="span4">
+        {% include strap-jekyll/default/sidebar.html %}
       </div><!--/span-->
     </div><!--/row-->
 

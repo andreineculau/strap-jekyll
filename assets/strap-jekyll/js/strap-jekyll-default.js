@@ -6,8 +6,12 @@
 
     // GENERAL
     $('.dropdown-toggle').dropdown();
+    $('#title').tooltip({
+        placement:'bottom',
+        container:'body'
+    });
 
-    // FOOTER
+    // SIDEBAR FOOTER
     $('.btn-group .btn[data-href]:not(.disabled)').on('click', function() {
         var $this = $(this),
         href = $this.data('href'),
@@ -22,8 +26,9 @@
         var $this = $(this);
 
         $this.tooltip({
-            placement: 'top',
-            title: $this.data('href')
+            placement:'top',
+            container:'body',
+            title:$this.data('href')
         })
     });
 
@@ -57,5 +62,11 @@
 
         $this.attr('data-language', $this.attr('lang'));
         $this.parent().attr('class', 'rainbow');
+    });
+
+    // POSTS
+    $('ul.posts > li > a[title]').tooltip({
+        placement:'left',
+        container:'body'
     });
 })(jQuery);

@@ -3,24 +3,6 @@ body {
     padding-bottom:60px;
 }
 
-body .annotator-bm-status {
-    top:auto !important;
-    bottom:0px !important;
-    -webkit-transition: bottom .4s ease-out!important;
-    -moz-transition: bottom .4s ease-out!important;
-    -o-transition: bottom .4s ease-out!important;
-    transition: bottom .4s ease-out!important
-}
-
-body .annotator-notice {
-    top:auto !important;
-    bottom:0px !important;
-    -webkit-transition: bottom .4s ease-out!important;
-    -moz-transition: bottom .4s ease-out!important;
-    -o-transition: bottom .4s ease-out!important;
-    transition: bottom .4s ease-out!important
-}
-
 code {
     color:#333333;
 }
@@ -32,26 +14,108 @@ a:hover > code {
     color:#005580;
 }
 
+
+/* Navbar */
+#navbar .dropdown-menu a:not([href]),
+#navbar .dropdown-toggle {
+    cursor:default;
+}
+
+#navbar ul.nav li.dropdown:hover ul.dropdown-menu {
+    display:block;
+    margin-top:0px;
+}
+
+#navbar a.menu:after, .dropdown-toggle:after {
+    content:none;
+}
+
+#navbar .dropdown-menu {
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+    -webkit-border-top-left-radius:0px;
+    -webkit-border-top-right-radius:0px;
+    -moz-border-top-left-radius:0px;
+    -moz-border-top-right-radius:0px;
+}
+
+
+/* Sidebar */
 #sidebar .sidebar-nav {
     padding:9px 0;
-}
-
-#author-contact .btn img {
-    width:14px;
-}
-
-#navbar .dropdown-menu a:not([href]) {
-    cursor:default;
 }
 
 #sidebar-toc {
     display:none;
 }
 
+#author-contact .btn img {
+    width:14px;
+}
+
+#sidebar-footer .btn-group,
+#sidebar-footer .github-btn {
+    margin-top:5px;
+}
+
+
+/* Headers */
 #content h2[id],
 #content h3[id],
 #content h4[id],
 #content h5[id] {
     cursor:pointer;
     padding-top:60px;
+}
+
+
+/* List posts */
+#content ul.posts {}
+
+
+/* Post META */
+#post .post-meta {
+    margin-top:-20px;
+    margin-bottom:40px;
+}
+
+#post .post-meta > div {
+    display:inline-block;
+}
+
+#post .post-meta .post-categories > span,
+#post .post-meta .post-tags > span {
+    font-weight:bold;
+}
+
+#post .post-meta .btn-group:hover ul.dropdown-menu {
+    display:block;
+    margin-top:0px;
+}
+
+
+/* Post Comments */
+#post-comments {
+    margin:50px;
+    border-top:1px solid #eee;
+}
+
+
+/* Annotator */
+body .annotator-bm-status {
+    top:auto !important;
+    bottom:0px !important;
+    -webkit-transition:bottom .4s ease-out!important;
+    -moz-transition:bottom .4s ease-out!important;
+    -o-transition:bottom .4s ease-out!important;
+    transition:bottom .4s ease-out!important
+}
+
+body .annotator-notice {
+    top:auto !important;
+    bottom:0px !important;
+    -webkit-transition:bottom .4s ease-out!important;
+    -moz-transition:bottom .4s ease-out!important;
+    -o-transition:bottom .4s ease-out!important;
+    transition:bottom .4s ease-out!important
 }

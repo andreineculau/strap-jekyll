@@ -1,0 +1,92 @@
+{% include strap-jekyll/default/vars.html %}
+
+<div id="post">
+  <div class="page-header">
+    <h1>{{ page.title }} <small class="post-date">{{ page.date | date_to_string }}</small></h1>
+  </div>
+
+  <div class="post-meta">
+    {% capture category_size %}{{ page.categories | size }}{% endcapture %}
+    {% if category_size != '0' %}
+      <div class="post-categories">
+        <span>{{ text.categories }}</span>
+        {% for category in page.categories %}
+          {% capture category_size %}{{ site.categories[category] | size }}{% endcapture %}
+          <div class="btn-group">
+            {% if category_size == '1' %}
+              <button class="btn btn-mini btn-inverse">
+                {{ category }}
+              </button>
+            {% else %}
+              <button class="btn btn-mini btn-inverse dropdown-toggle" data-toggle="dropdown">
+                {{ category }}
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                {% for post_in_category in site.categories[category] %}
+                  {% if post_in_category.url != page.url %}
+                    <li><a href="{{ site.base_url }}{{ post_in_category.url }}">{{ post_in_category.title }}</a></li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% capture tag_size %}{{ page.tags | size }}{% endcapture %}
+    {% if tag_size != '0' %}
+      <div class="post-tags">
+        <span>{{ text.tags }}</span>
+        {% for tag in page.tags %}
+          {% capture tag_size %}{{ site.tags[tag] | size }}{% endcapture %}
+          <div class="btn-group">
+            {% if tag_size == '1' %}
+              <button class="btn btn-mini">
+                {{ tag }}
+              </button>
+            {% else %}
+              <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
+                {{ tag }}
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                {% for post_in_tag in site.tags[tag] %}
+                  {% if post_in_tag.url != page.url %}
+                    <li><a href="{{ site.base_url }}{{ post_in_tag.url }}">{{ post_in_tag.title }}</a></li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  {{ content }}
+</div>
+
+<div id="post-comments">
+  {% if text.leave_a_comment_on_twitter_to and page_author.twitter %}
+    <a href="https://twitter.com/intent/tweet?screen_name={{ page_author.twitter }}&amp;text=re:&amp;url={{ site_pages_url | escape }}{{ page.url | escape }}">{{ text.leave_a_comment_on_twitter_to }} @{{ page_author.twitter }}</a>
+    <br><br>
+  {% endif %}
+
+  {% if text.leave_a_comment_on_github and page.commentIssueId %}
+    <!-- http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html -->
+    <a id="post-comments-url" href="https://github.com/{{ site.author }}/{{ site.repo }}/issues/{{ page.commentIssueId }}">{{ text.leave_a_comment_on_github }}</a>
+    <div id="post-comments-placeholder"></div>
+  {% endif %}
+</div>
+
+<!--<script type="text/javascript">
+  $("#post p,#post li").each( function(index) {
+    if (index > 0 && $.trim($(this).text()).length > 0) {
+      $(this).attr("id", "par" + index.toString());
+      var html = $(this).html();
+      $(this).html(html + " <a href='#par" + index.toString() + "'>#</a>");
+    }
+  });
+</script>
+-->

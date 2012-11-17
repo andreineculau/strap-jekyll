@@ -16,8 +16,8 @@ base_url: *base_url
 
 future: false
 markdown: kramdown
-permalink: date
-#paginate:
+permalink: none
+paginate: true
 #exclude:
 #include:
 #limit_posts:
@@ -86,7 +86,7 @@ description: Simple Twitter Bootstrap for Jekyll
 pages_url: null
 repo_url: null
 repo: strap-jekyll
-author: &github_author andreineculau
+author: andreineculau
 authors:
   andreineculau:
     display_name: Andrei Neculau
@@ -94,7 +94,7 @@ authors:
     email:
     url: "http://andreineculau.com"
     twitter: andreineculau
-    github: *github_author
+    github: andreineculau
 #theme.tools
 annotator: null
 github_watch_btn: false
@@ -147,11 +147,17 @@ sidebars:
             url: /develop/titlul_2.capitolul_4.html
 #theme.text
 text:
-  index: index
-  downloadZipFile: Download ZIP File
-  downloadTarBall: Download TAR Ball
-  forkMeOnGitHub: Fork me on <strong>GitHub</strong>
-  maintainedBy: project maintained by
+  index: null
+  download_zip: Download ZIP File
+  download_tarball: Download TAR Ball
+  fork_me_on_github: Fork me on <strong>GitHub</strong>
+  maintained_by: maintained by
   contact: contact
   toc: Table of Contents
-  related: Related Pages
+  related: Related
+  comments: Comments
+  posts: Posts
+  categories: is relevant to
+  tags: and focuses on
+  leave_a_comment_on_github: Want to leave a comment?
+  leave_a_comment_on_twitter_to: Tweet your comment to

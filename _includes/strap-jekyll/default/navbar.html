@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="{{ site.base_url }}/index.html">{{ site.name }}</a>
+      <a id="title" class="brand" href="{{ site.base_url }}/index.html" title="{{ site.description }}">{{ site.name }}</a>
       <div class="btn-group pull-right">
         {% include strap-jekyll-default-navbar-right-custom.html %}
         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -14,15 +14,15 @@
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-          {% if text.downloadZipFile %}
-            <li><a href="{{ site_github_repo_url }}/zipball/master">{{ text.downloadZipFile }}</a></li>
+          {% if text.download_zip %}
+            <li><a href="{{ site_github_repo_url }}/zipball/master">{{ text.download_zip }}</a></li>
           {% endif %}
-          {% if text.downloadTarBall %}
-            <li><a href="{{ site_github_repo_url }}/tarball/master">{{ text.downloadTarBall }}</a></li>
+          {% if text.download_tarball %}
+            <li><a href="{{ site_github_repo_url }}/tarball/master">{{ text.download_tarball }}</a></li>
           {% endif %}
-          {% if text.forkMe %}
+          {% if text.fork_me_on_github %}
             <li class="divider"></li>
-            <li><a href="{{ site_repo_url }}">{{ text.forkMe }}</strong></a></li>
+            <li><a href="{{ site_repo_url }}">{{ text.fork_me_on_github }}</strong></a></li>
           {% endif %}
         </ul>
       </div>
