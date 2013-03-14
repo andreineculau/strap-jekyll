@@ -28,11 +28,3 @@ function loadGithubComments(data) {
     $('#post-comments-placeholder').append('<div class="comment">' + cheader + cbody + '</div>');
   }
 }
-
-$.ajax("https://api.github.com/repos/izuzak/izuzak.github.com/issues/{{ page.commentIssueId }}/comments", {
-  headers: {Accept: "application/vnd.github.full+json"},
-  dataType: "json",
-  success: function(msg){
-    loadComments(msg);
- }
-});

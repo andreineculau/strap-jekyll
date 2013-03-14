@@ -1,53 +1,58 @@
 {% if page_sidebar or site.posts %}
-  <div class="well sidebar-nav" id="sidebar">
-    <ul class="nav nav-list" id="sidebar-toc">
-      <li class="nav-header">{{ text.toc }}</li>
-    </ul>
-    {% if page_sidebar %}
-      <ul class="nav nav-list" id="sidebar-related">
-        <li class="divider"></li>
-        <li class="nav-header">{{ text.related }}</li>
-        <li class="{% if page_sidebar.url == page.url %} active{% endif %}"><a href="{{ site.base_url }}{{ page_sidebar.url }}">{{ page_sidebar.title }}</a></li>
-
-        {% for header in page_sidebar.headers %}
+  <div class="sidebar-nav hidden-phone" id="sidebar">
+    <div class="well">
+      <ul class="nav nav-list" id="sidebar-toc">
+        <li class="nav-header">{{ text.toc }}</li>
+      </ul>
+      {% if page_sidebar %}
+        <ul class="nav nav-list" id="sidebar-related">
           <li class="divider"></li>
-          {% if header.url %}
-            <li class="{% if header.url == page.url %} active{% endif %}"><a href="{{ site.base_url }}{{ header.url }}">{{ header.title }}</a></li>
-          {% else %}
-            <li class="nav-header">{{ header.title }}</li>
+          <li class="nav-header">{{ text.related }}</li>
+          {% if page_sidebar.url %}
+            <li class="{% if page_sidebar.url == page.url %} active{% endif %}"><a href="{{ site.base_url }}{{ page_sidebar.url }}">{{ page_sidebar.title }}</a></li>
           {% endif %}
 
-          {% for item in header.items %}
-            <li class="{% if item.url == page.url %} active{% endif %}"><a href="{{ site.base_url }}{{ item.url }}">{{ item.title }}</a></li>
+          {% for header in page_sidebar.headers %}
+            <li class="divider"></li>
+            {% if header.url %}
+              <li class="{% if header.url == page.url %} active{% endif %}"><a href="{{ site.base_url }}{{ header.url }}">{{ header.title }}</a></li>
+            {% else %}
+              <li class="nav-header">{{ header.title }}</li>
+            {% endif %}
+
+            {% for item in header.items %}
+              <li class="{% if item.url == page.url %} active{% endif %}"><a href="{{ site.base_url }}{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
           {% endfor %}
-        {% endfor %}
-      </ul>
-    {% endif %}
-    {% capture related_posts_size %}{{ site.related_posts | size }}{% endcapture %}
-    {% if related_posts_size != '0' %}
-      <ul class="nav nav-list posts" id="sidebar-related">
-        <li class="divider"></li>
-        <li class="nav-header">{{ text.related }}</li>
-        {% for related_post in site.related_posts offset:0 limit:5 %}
-          <li><a href="{{ site.base_url }}{{ related_post.url }}" title="{{ related_post.date | date_to_string }}">{{ related_post.title }}</a></li>
-        {% endfor %}
-        {% if related_post.next %}
-          <li><a href="{{ site.base_url }}/archive.html">See more...</a></li>
-        {% endif %}
-      </ul>
-    {% endif %}
-    {% if site.posts %}
-      <ul class="nav nav-list posts" id="sidebar-posts">
-        <li class="divider"></li>
-        <li class="nav-header">{{ text.posts }}</li>
-        {% for latest_post in site.posts offset:0 limit:10 %}
-          <li><a href="{{ site.base_url }}{{ latest_post.url }}" title="{{ latest_post.date | date_to_string }}">{{ latest_post.title }}</a></li>
-        {% endfor %}
-        {% if latest_post.next %}
-          <li><a href="{{ site.base_url }}/archive.html">See more...</a></li>
-        {% endif %}
-      </ul>
-    {% endif %}
-  </div><!--/.well -->
+        </ul>
+      {% endif %}
+      {% capture related_posts_size %}{{ site.related_posts | size }}{% endcapture %}
+      {% if related_posts_size != '0' %}
+        <ul class="nav nav-list posts" id="sidebar-related">
+          <li class="divider"></li>
+          <li class="nav-header">{{ text.related }}</li>
+          {% for related_post in site.related_posts offset:0 limit:5 %}
+            <li><a href="{{ site.base_url }}{{ related_post.url }}" title="{{ related_post.date | date_to_string }}">{{ related_post.title }}</a></li>
+          {% endfor %}
+          {% if related_post.next %}
+            <li><a href="{{ site.base_url }}/archive.html">See more...</a></li>
+          {% endif %}
+        </ul>
+      {% endif %}
+      {% if site.posts and page.url == '/index.html' %}
+        <ul class="nav nav-list posts" id="sidebar-posts">
+          <li class="divider"></li>
+          <li class="nav-header">{{ text.posts }}</li>
+          {% for latest_post in site.posts offset:0 limit:10 %}
+            <li><a href="{{ site.base_url }}{{ latest_post.url }}" title="{{ latest_post.date | date_to_string }}">{{ latest_post.title }}</a></li>
+          {% endfor %}
+          {% if latest_post.next %}
+            <li><a href="{{ site.base_url }}/archive.html">See more...</a></li>
+          {% endif %}
+        </ul>
+      {% endif %}
+    </div><!--/.well -->
+    {% include strap-jekyll-default-sidebar-custom.html %}
+  </div>
 {% endif %}
 {% include strap-jekyll/default/sidebar-footer.html %}

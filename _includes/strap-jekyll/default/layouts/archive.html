@@ -1,6 +1,9 @@
 {% include strap-jekyll/default/vars.html %}
 
-<ul class="posts">
+{{ content }}
+
+<h5>{{ site.posts[0].date | date: '%Y %b' }}</h5>
+<ul class="posts unstyled">
   {% for post in site.posts %}
     <li class="post">
       <a href="{{ site.base_url }}{{ post.url }}" title="{{ post.date | date_to_string }}">{{ post.title }}</a>
@@ -32,13 +35,13 @@
       </span>
     </li>
 
-    {% if post.next %}
-      {% capture yearmonth %}{{ post.date | date: '%Y %m' }}{% endcapture %}
-      {% capture nyearmonth %}{{ post.next.date | date: '%Y %m' }}{% endcapture %}
-      {% if yearmonth != nyearmonth %}
+    {% if post.previous %}
+      {% capture yearmonth %}{{ post.date | date: '%Y%m' }}{% endcapture %}
+      {% capture pyearmonth %}{{ post.previous.date | date: '%Y%m' }}{% endcapture %}
+      {% if yearmonth != pyearmonth %}
         </ul>
-        <h3>{{ post.next.date | date: '%Y m' }}</h3>
-        <ul class="posts">
+        <h5>{{ post.previous.date | date: '%Y %b' }}</h5>
+        <ul class="posts unstyled">
       {% endif %}
     {% endif %}
   {% endfor %}

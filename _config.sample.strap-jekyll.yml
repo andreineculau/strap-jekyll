@@ -95,11 +95,14 @@ authors:
     url: "http://andreineculau.com"
     twitter: andreineculau
     github: andreineculau
+
 #theme.tools
 annotator: null
-github_watch_btn: false
+analytics: null
+github_star_btn: false
 github_fork_btn: false
 github_follow_btn: false
+
 #theme.sidebar
 sidebar: null
 sidebars:

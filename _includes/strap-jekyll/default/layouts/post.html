@@ -2,7 +2,12 @@
 
 <div id="post">
   <div class="page-header">
-    <h1>{{ page.title }} <small class="post-date">{{ page.date | date_to_string }}</small></h1>
+    <h1>
+      {{ page.title }}
+      {% if page.date %}
+        <small class="post-date">{{ page.date | date_to_string }}</small>
+      {% endif %}
+    </h1>
   </div>
 
   <div class="post-meta">
@@ -13,7 +18,7 @@
         {% for category in page.categories %}
           {% capture category_size %}{{ site.categories[category] | size }}{% endcapture %}
           <div class="btn-group">
-            {% if category_size == '1' %}
+            {% if category_size == '0' or category_size == '1' %}
               <button class="btn btn-mini btn-inverse">
                 {{ category }}
               </button>
@@ -41,7 +46,7 @@
         {% for tag in page.tags %}
           {% capture tag_size %}{{ site.tags[tag] | size }}{% endcapture %}
           <div class="btn-group">
-            {% if tag_size == '1' %}
+            {% if tag_size == '0' or tag_size == '1' %}
               <button class="btn btn-mini">
                 {{ tag }}
               </button>

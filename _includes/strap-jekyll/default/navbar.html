@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
       </a>
       <a id="title" class="brand" href="{{ site.base_url }}/index.html" title="{{ site.description }}">{{ site.name }}</a>
-      <div class="btn-group pull-right">
+      <div class="btn-group pull-right hidden-phone">
         {% include strap-jekyll-default-navbar-right-custom.html %}
         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
           <i class="icon-user"></i> {{ site_pages_url }}
@@ -22,7 +22,7 @@
           {% endif %}
           {% if text.fork_me_on_github %}
             <li class="divider"></li>
-            <li><a href="{{ site_repo_url }}">{{ text.fork_me_on_github }}</strong></a></li>
+            <li><a href="{{ site_repo_url }}">{{ text.fork_me_on_github }}</a></li>
           {% endif %}
         </ul>
       </div>
@@ -38,7 +38,9 @@
             <a href="{{ site.base_url }}{{ sidebar.url }}"{% if sidebar.headers %} class="dropdown-toggle" role="button" data-toggle="dropdown" data-target="#"{% endif %}>{{ sidebar.title }}<b class="caret"></b></a>
             {% if sidebar.headers %}
               <ul class="dropdown-menu" role="menu">
+              {% if sidebar.url %}
                 <li class="{% if sidebar.title == page_sidebar.title %} active{% endif %}"><a href="{{ site.base_url }}{{ sidebar.url }}">{{ sidebar.title }}</a></li>
+              {% endif %}
               {% for header in sidebar.headers %}
                 <li class="divider"></li>
                 <li class="{% if header.url == page.url %} active{% endif %}">

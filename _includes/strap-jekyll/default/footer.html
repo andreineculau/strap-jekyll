@@ -20,29 +20,39 @@
           dataType: 'json',
           success: loadGithubComments
         });
-      </script
+      </script>
     {% endif %}
 
-    {% if page.annotator %}
-      {% assign annotator = true %}
-    {% else %}{% if site.annotator %}
-      {% assign annotator = true %}
-    {% endif %}{% endif %}
-    {% if annotator %}
+    {% if page_annotator %}
       <script>
-      window._annotatorConfig = {
-        auth: {
-          tokenUrl: "http://annotateit.org/api/token"
-        },
-        store: {
-          prefix: "http://annotateit.org/api"
-        },
-        tags: !0
-      }
+        window._annotatorConfig = {
+          auth: {
+            tokenUrl: "http://annotateit.org/api/token"
+          },
+          store: {
+            prefix: "http://annotateit.org/api"
+          },
+          tags: !0
+        }
       </script>
       <script src="http://assets.annotateit.org/bookmarklet/bootstrap.js"></script>
     {% endif %}
 
+    {% if page_analytics %}
+      <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ page_analytics }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {% endif %}
+
     {% include strap-jekyll-default-footer-custom.html %}
+
   </body>
 </html>

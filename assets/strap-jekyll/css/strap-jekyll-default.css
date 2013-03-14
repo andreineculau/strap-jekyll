@@ -58,6 +58,10 @@ a:hover > code {
     margin-top:5px;
 }
 
+#sidebar-footer iframe {
+    border: 0px;
+}
+
 
 /* Headers */
 #content h2[id],

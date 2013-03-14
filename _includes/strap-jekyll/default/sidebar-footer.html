@@ -23,24 +23,24 @@
       {% endif %}
       {% if site_author.twitter %}
         <button class="btn" data-href="http://twitter.com/{{ site_author.twitter }}">
-          <img src="{{ site.base_url }}/assets/strap-jekyll/img/icon-twitter.png"> on Twitter
+          <img src="{{ site.base_url }}/assets/strap-jekyll/img/icon-twitter.png" alt="Twitter"> on Twitter
         </button>
       {% endif %}
       {% if site_author.github %}
         <button class="btn" data-href="http://github.com/{{ site_author.github }}">
-          <img src="{{ site.base_url }}/assets/strap-jekyll/img/icon-github.png"> on GitHub
+          <img src="{{ site.base_url }}/assets/strap-jekyll/img/icon-github.png" alt="GitHub"> on GitHub
         </button>
       {% endif %}
     </div>
     <br>
   {% endif %}
   {% if site.github_star_btn %}
-    <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{ site.author }}&amp;repo={{ site.repo }}&amp;type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+    <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{ site.author }}&amp;repo={{ site.repo }}&amp;type=watch" width="62" height="20"></iframe>
   {% endif %}
   {% if site.github_fork_btn %}
-    <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{ site.author }}&amp;repo={{ site.repo }}&amp;type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="53" height="20"></iframe>
+    <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{ site.author }}&amp;repo={{ site.repo }}&amp;type=fork" width="53" height="20"></iframe>
   {% endif %}
   {% if site.github_follow_btn %}
-    <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{ site.author }}&amp;repo={{ site.repo }}&amp;type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="180" height="20"></iframe>
+    <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{ site.author }}&amp;repo={{ site.repo }}&amp;type=follow" width="180" height="20"></iframe>
   {% endif %}
 </footer>

@@ -1,6 +1,5 @@
 {% assign text = site.text %}
 
-
 {% if page.author %}
   {% assign page_author = site.authors[page.author] %}
 {% else %}
@@ -14,7 +13,6 @@
 {% else %}{% if site.sidebar %}
   {% assign page_sidebar = site.sidebars[site.sidebar] %}
 {% endif %}{% endif %}{% endif %}
-
 
 {% assign site_author = site.authors[site.author] %}
 
@@ -34,3 +32,16 @@
 {% else %}
   {% capture site_repo_url %}http://github.com/{{ site.author }}/{{ site.repo }}{% endcapture %}
 {% endif %}
+
+{% if page.annotator %}
+  {% assign page_annotator = page.annotator %}
+{% else %}{% if site.annotator %}
+  {% assign page_annotator = site.annotator %}
+{% endif %}{% endif %}
+
+{% if page.analytics %}
+  {% assign page_analytics = page.analytics %}
+{% else %}{% if site.analytics %}
+  {% assign page_analytics = site.analytics %}
+{% endif %}{% endif %}
+

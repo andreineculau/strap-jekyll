@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+{% include strap-jekyll/default/vars.html %}
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.name }}</title>
+  <link href="{{ site_pages_url }}atom.xml" rel="self"/>
+  <link href="{{ site_pages_url }}"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site_pages_url }}</id>
+  <author>
+    <name>{{ page_author.display_name }}</name>
+  </author>
+  {% for post in site.posts %}
+    <entry>
+      <title>{{ post.title }}</title>
+      <link href="{{ site_pages_url }}{{ post.url }}"/>
+      <updated>{{ post.date | date_to_xmlschema }}</updated>
+      <id>{{ site_pages_url }}{{ post.id }}</id>
+      <content type="html">{{ post.content | strip_html | truncatewords: 100 | xml_escape }}</content>
+    </entry>
+  {% endfor %}
+</feed>
